@@ -1,1 +1,6 @@
+master
+node_modules
 app-IDintelligence.code-workspace
+yarn.lock
+yarn-error.log
+package-lock.json

@@ -1,6 +1,6 @@
-master
 node_modules
 app-IDintelligence.code-workspace
+build
 yarn.lock
-yarn-error.log
 package-lock.json
+.DS_Store

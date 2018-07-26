@@ -19,7 +19,7 @@ class LocationList extends Component {
         this.props.closeInfoWindow();
         const {value} = event.target;
         var locations = [];
-        this.props.alllocations.forEach(function (location) {
+        this.props.datlocations.forEach(function (location) {
             if (location.longname.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
                 location.marker.setVisible(true);
                 locations.push(location);
@@ -36,7 +36,7 @@ class LocationList extends Component {
 
     componentWillMount() {
         this.setState({
-            'locations': this.props.alllocations
+            'locations': this.props.datlocations
         });
     }
 

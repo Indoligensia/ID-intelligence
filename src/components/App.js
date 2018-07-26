@@ -5,7 +5,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            'alllocations': [
+            'datlocations': [
                 {
                     'name': "Starbucks",
                     'type': "Recommended Places",
@@ -67,8 +67,8 @@ class App extends Component {
             self.closeInfoWindow();
         });
 
-        var alllocations = [];
-        this.state.alllocations.forEach(function (location) {
+        var datlocations = [];
+        this.state.datlocations.forEach(function (location) {
             var longname = location.name + ' - ' + location.type;
             var marker = new window.google.maps.Marker({
                 position: new window.google.maps.LatLng(location.latitude, location.longitude),
@@ -83,10 +83,10 @@ class App extends Component {
             location.longname = longname;
             location.marker = marker;
             location.display = true;
-            alllocations.push(location);
+            datlocations.push(location);
         });
         this.setState({
-            'alllocations': alllocations
+            'datlocations': datlocations
         });
     }
 
@@ -145,7 +145,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <LocationList key="100" alllocations={this.state.alllocations} openInfoWindow={this.openInfoWindow}
+                <LocationList key="100" datlocations={this.state.datlocations} openInfoWindow={this.openInfoWindow}
                               closeInfoWindow={this.closeInfoWindow}/>
                 <div id="map"></div>
             </div>

@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
 import LocationList from './LocationList';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            'open': false,
+            'show': null,
             'datlocations': [
                 {
                     'name': "Klinik INTAN dr. Asdi Yudiono",
@@ -58,6 +64,16 @@ class App extends Component {
         this.openInfoWindow = this.openInfoWindow.bind(this);
         this.closeInfoWindow = this.closeInfoWindow.bind(this);
     }
+
+    handleToggle = () => this.setState({open: !this.state.open});
+
+    showBar = () => {
+        this.setState({show: 'bar', open: false });
+    };
+
+    showFoo = () => {
+        this.setState({show: 'foo', open: false });
+    };
 
     componentDidMount() {
         window.initMap = this.initMap;
@@ -172,11 +188,28 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <LocationList key="100" datlocations={this.state.datlocations} openInfoWindow={this.openInfoWindow}
-                              closeInfoWindow={this.closeInfoWindow}/>
-                <div id="map"></div>
-            </div>
+            <MuiThemeProvider>
+                <div>
+                <AppBar
+                    iconClassNameRight="muidocs-icon-navigation-expand-more"
+                    title="ID-intelligence: Yogyakarta"
+                    onLeftIconButtonClick={this.handleToggle}
+                />
+                    <Drawer
+                    docked={false}
+                    width={200}
+                    open={this.state.open}
+                    onRequestChange={(open) => this.setState({open})}>
+
+                    <AppBar title="AppBar"/>
+                    <MenuItem id="showFooId" onClick={this.showFoo}>Show Foo</MenuItem>
+                    <MenuItem id="showBarId" onClick={this.showBar}>Show Bar</MenuItem>
+                    </Drawer>
+                    <LocationList key="100" datlocations={this.state.datlocations} openInfoWindow={this.openInfoWindow}
+            closeInfoWindow={this.closeInfoWindow}/>
+                    <div id="map"></div>
+                </div>
+            </MuiThemeProvider>
         );
     }
 }

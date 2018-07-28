@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import LocationList from './LocationList';
+import TextField from 'material-ui/TextField';
 
 class App extends Component {
     constructor(props) {
@@ -197,16 +196,24 @@ class App extends Component {
                 />
                     <Drawer
                     docked={false}
-                    width={200}
+                    width={300}
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({open})}>
 
-                    <AppBar title="AppBar"/>
-                    <MenuItem id="showFooId" onClick={this.showFoo}>Show Foo</MenuItem>
-                    <MenuItem id="showBarId" onClick={this.showBar}>Show Bar</MenuItem>
+                    <AppBar title="Filter"/>
+                    
+                    <div>
+                    <TextField
+                        name="searchText"
+                        value={this.state.searchText}
+                        onChange={this.onTextChange}
+                        floatingLabelText="search for location"
+                        fullWidth={true}
+                    />
+                    <br />
+                    </div>
                     </Drawer>
-                    <LocationList key="100" datlocations={this.state.datlocations} openInfoWindow={this.openInfoWindow}
-            closeInfoWindow={this.closeInfoWindow}/>
+                    
                     <div id="map"></div>
                 </div>
             </MuiThemeProvider>

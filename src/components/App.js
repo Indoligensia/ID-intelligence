@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
-import TextField from 'material-ui/TextField';
+import LocationList from './LocationList';
 
 class App extends Component {
     constructor(props) {
@@ -203,14 +203,9 @@ class App extends Component {
                     <AppBar title="Filter"/>
                     
                     <div>
-                    <TextField
-                        name="searchText"
-                        value={this.state.searchText}
-                        onChange={this.onTextChange}
-                        floatingLabelText="search for location"
-                        fullWidth={true}
-                    />
                     <br />
+                   <LocationList key="100" datlocations={this.state.datlocations} openInfoWindow={this.openInfoWindow}
+closeInfoWindow={this.closeInfoWindow}/>
                     </div>
                     </Drawer>
                     

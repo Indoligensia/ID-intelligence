@@ -12,7 +12,6 @@ class LocationList extends Component {
         };
 
         this.filterLocations = this.filterLocations.bind(this);
-        this.toggleSuggestions = this.toggleSuggestions.bind(this);
     }
 
     filterLocations(event) {
@@ -40,12 +39,6 @@ class LocationList extends Component {
         });
     }
 
-    toggleSuggestions() {
-        this.setState({
-            'suggestions': !this.state.suggestions
-        });
-    }
-
     render() {
         var locationlist = this.state.locations.map(function (listItem, index) {
             return (
@@ -54,13 +47,12 @@ class LocationList extends Component {
         }, this);
 
         return (
-            <div className="search">
-                <input role="search" aria-labelledby="filter" id="search-field" className="search-field" type="text" placeholder="Filter"
+            <div>
+                <input role="search" aria-labelledby="filter" id="search-field" type="text" placeholder="Filter"
                        value={this.state.query} onChange={this.filterLocations}/>
-                <ul>
+                
                     {this.state.suggestions && locationlist}
-                </ul>
-                <button className="button" onClick={this.toggleSuggestions}>Show/Hide Suggestions</button>
+                
             </div>
         );
     }

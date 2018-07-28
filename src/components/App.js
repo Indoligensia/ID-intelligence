@@ -8,11 +8,9 @@ import Foo from './Foo';
 import './App.css';
 
 const paperStyle = {
-    height: '85%',
-    width: "85%",
-    margin: '7%',
-    textAlign: 'center',
-    display: 'inline-block',
+    height: '100%',
+    width: "100%",
+    textAlign: 'center'
 };
 
 class App extends Component {
@@ -94,7 +92,7 @@ class App extends Component {
 
                 <AppBar
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
-                    title="ID-intelligence: Yogyakarta"
+                    title="ID-intelligence"
                     onLeftIconButtonClick={this.handleToggle}
                 />
 
@@ -110,7 +108,7 @@ class App extends Component {
 
                 <Paper style={paperStyle} zDepth={5}>
                     <Toolbar style={{"justifyContent": "center"}}>
-                        <ToolbarTitle text="Material UI"/>
+                        <ToolbarTitle text="Yogyakarta"/>
                     </Toolbar>
                     {content}
                     <p>Click the icon on the AppBar to open the Drawer and then pick a menu item. The text above should change.</p>

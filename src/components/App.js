@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import NavBar from './navbar/NavBar';
 import LocationList from './LocationList';
 
 class App extends Component {
@@ -172,11 +174,14 @@ class App extends Component {
 
     render() {
         return (
+            <MuiThemeProvider>
             <div>
+                <NavBar />
                 <LocationList key="100" datlocations={this.state.datlocations} openInfoWindow={this.openInfoWindow}
                               closeInfoWindow={this.closeInfoWindow}/>
                 <div id="map"></div>
             </div>
+            </MuiThemeProvider>
         );
     }
 }

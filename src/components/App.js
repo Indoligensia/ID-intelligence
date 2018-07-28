@@ -7,18 +7,46 @@ class App extends Component {
         this.state = {
             'datlocations': [
                 {
-                    'name': "Starbucks",
-                    'type': "Recommended Places",
-                    'latitude': -7.794960723053684,
-                    'longitude': 110.36559601044893,
-                    'streetAddress': "Jalan Malioboro No. 41"
+                    'name': "Klinik INTAN dr. Asdi Yudiono",
+                    'latitude': -7.8007645966897,
+                    'longitude': 110.37374542348948,
+                    'streetAddress': "Jl. Masjid 3 Pakualaman"
                 },
                 {
-                    'name': "BAKPIAKU Gajah Mada (pusat)",
-                    'type': "Recommended Places",
-                    'latitude': -7.797168,
-                    'longitude': 110.3727,
-                    'streetAddress': "Jl Gajahmada No 60"
+                    'name': "Laboratorium Klinik PRODIA",
+                    'latitude': -7.802766589451255,
+                    'longitude': 110.37261328892649,
+                    'streetAddress': "Jl. Bintaran Kulon 28"
+                },
+                {
+                    'name': "Apotek dan Klinik Sultan Agung",
+                    'latitude': -7.801416000799015,
+                    'longitude': 110.3749680557057,
+                    'streetAddress': "Jl. Sultan Agung 41"
+                },
+                {
+                    'name': "Puskesmas Gondomanan",
+                    'latitude': -7.803728984713199,
+                    'longitude': 110.37059894079684,
+                    'streetAddress': "Jl. Ledok Gondomanan 9A"
+                },
+                {
+                    'name': "Puskesmas Danurejan 2",
+                    'latitude': -7.793969283923237,
+                    'longitude': 110.38015258930554,
+                    'streetAddress': "Jl. Krasak Timur 34"
+                },
+                {
+                    'name': "Puskesmas Kraton",
+                    'latitude': -7.806050420012815,
+                    'longitude': 110.36500006022327,
+                    'streetAddress': "Jl. Musikanan 94"
+                },
+                {
+                    'name': "Rumah Sakit Bethesda",
+                    'latitude': -7.783329194028682,
+                    'longitude': 110.3776623470296,
+                    'streetAddress': "Jl. Sudirman 70 (Depan Galeria Mall)"
                 }
             ],
             'map': '',
@@ -42,7 +70,7 @@ class App extends Component {
         mapview.style.height = window.innerHeight + "px";
         var map = new window.google.maps.Map(mapview, {
             center: {lat: -7.797068, lng: 110.370529},
-            zoom: 15,
+            zoom: 14,
             mapTypeControl: false
         });
 

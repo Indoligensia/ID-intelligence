@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import TextField from 'material-ui/TextField';
 import LocationItem from './LocationItem';
 
 class LocationList extends Component {
@@ -48,8 +49,13 @@ class LocationList extends Component {
 
         return (
             <div>
-                <input role="search" aria-labelledby="filter" id="search-field" type="text" placeholder="Filter"
-                       value={this.state.query} onChange={this.filterLocations}/>
+                <TextField
+                    name="value"
+                    value={this.state.query}
+                    onChange={this.filterLocations}
+                    floatingLabelText="filter"
+                    fullWidth={true}
+                />
                 
                 {this.state.suggestions && locationlist}                
             </div>

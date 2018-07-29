@@ -14,44 +14,37 @@ class App extends Component {
                 {
                     'name': "Klinik INTAN dr. Asdi Yudiono",
                     'latitude': -7.8007645966897,
-                    'longitude': 110.37374542348948,
-                    'streetAddress': "Jl. Masjid 3 Pakualaman"
+                    'longitude': 110.37374542348948
                 },
                 {
-                    'name': "Laboratorium Klinik PRODIA",
+                    'name': "Masjid At-Tauhid",
                     'latitude': -7.802766589451255,
-                    'longitude': 110.37261328892649,
-                    'streetAddress': "Jl. Bintaran Kulon 28"
+                    'longitude': 110.37261328892649
                 },
                 {
-                    'name': "Apotek dan Klinik Sultan Agung",
+                    'name': "Sate Padang Mamak Sharil",
                     'latitude': -7.801416000799015,
-                    'longitude': 110.3749680557057,
-                    'streetAddress': "Jl. Sultan Agung 41"
+                    'longitude': 110.3749680557057
                 },
                 {
-                    'name': "Puskesmas Gondomanan",
+                    'name': "Bakmi Djawa Babinlon",
                     'latitude': -7.803728984713199,
-                    'longitude': 110.37059894079684,
-                    'streetAddress': "Jl. Ledok Gondomanan 9A"
+                    'longitude': 110.37059894079684
                 },
                 {
-                    'name': "Puskesmas Danurejan 2",
+                    'name': "Ruly's Bike Works",
                     'latitude': -7.793969283923237,
-                    'longitude': 110.38015258930554,
-                    'streetAddress': "Jl. Krasak Timur 34"
+                    'longitude': 110.38015258930554
                 },
                 {
                     'name': "Puskesmas Kraton",
                     'latitude': -7.806050420012815,
-                    'longitude': 110.36500006022327,
-                    'streetAddress': "Jl. Musikanan 94"
+                    'longitude': 110.36500006022327
                 },
                 {
                     'name': "Rumah Sakit Bethesda",
                     'latitude': -7.783329194028682,
-                    'longitude': 110.3776623470296,
-                    'streetAddress': "Jl. Sudirman 70 (Depan Galeria Mall)"
+                    'longitude': 110.3776623470296
                 }
             ],
             'map': '',

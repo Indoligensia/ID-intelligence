@@ -147,8 +147,8 @@ class App extends Component {
                     response.json().then(function (data) {
                         var location_data = data.response.venues[0];
                         var name = '<b>' + location_data.name + '</b><br>';
-                        var address = '<i>address: ' + location_data.location.address + '</i><br>';
-                        var readMore = '<a href="https://foursquare.com/v/'+ location_data.id +'" target="_blank">Read More on Foursquare Website</a>'
+                        var address = '<i>address: ' + location_data.location.address + '</i><br><br>';
+                        var readMore = '<a href="https://foursquare.com/v/'+ location_data.id +'" target="_blank">read more on Foursquare website</a>'
                         self.state.infowindow.setContent(name + address + readMore);
                     });
                 }

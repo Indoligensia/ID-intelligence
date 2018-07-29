@@ -43,7 +43,10 @@ class LocationList extends Component {
     render() {
         var locationlist = this.state.locations.map(function (listItem, index) {
             return (
-                <LocationItem key={index} openInfoWindow={this.props.openInfoWindow.bind(this)} data={listItem}/>
+                <LocationItem 
+                    key={index} 
+                    openInfoWindow={this.props.openInfoWindow.bind(this)} 
+                    data={listItem}/>
             );
         }, this);
 

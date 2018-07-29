@@ -1,7 +1,7 @@
 # Neighborhood Map (React) 
 The final project of the Udacity Front-End Developer Nanodegree Program. [View the project live.](https://indolligence.github.io/ID-intelligence)
 
-This is a single page application featuring a map of a neighborhood in Yogyakarta, Indonesia that you probably would like to visit. The location data are from Foursquare and can be filtered by its venue name.
+This is a single page application featuring a map of a neighborhood in Yogyakarta, Indonesia, that you probably would like to visit. The location data are from Foursquare and can be filtered by its venue name.
 
 ## Installation
 

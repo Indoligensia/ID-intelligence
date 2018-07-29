@@ -12,6 +12,16 @@ class App extends Component {
             'show': null,
             'datlocations': [
                 {
+                    'name': "Puskesmas Kraton",
+                    'latitude': -7.806050420012815,
+                    'longitude': 110.36500006022327
+                },
+                {
+                    'name': "Rumah Sakit Bethesda",
+                    'latitude': -7.783329194028682,
+                    'longitude': 110.3776623470296
+                },
+                {
                     'name': "Klinik INTAN dr. Asdi Yudiono",
                     'latitude': -7.8007645966897,
                     'longitude': 110.37374542348948
@@ -35,16 +45,6 @@ class App extends Component {
                     'name': "Ruly's Bike Works",
                     'latitude': -7.793969283923237,
                     'longitude': 110.38015258930554
-                },
-                {
-                    'name': "Puskesmas Kraton",
-                    'latitude': -7.806050420012815,
-                    'longitude': 110.36500006022327
-                },
-                {
-                    'name': "Rumah Sakit Bethesda",
-                    'latitude': -7.783329194028682,
-                    'longitude': 110.3776623470296
                 }
             ],
             'map': '',
@@ -183,7 +183,8 @@ class App extends Component {
                         open={this.state.open}
                         onRequestChange={(open) => this.setState({open})}>
 
-                        <AppBar title="locations"/>
+                        <AppBar title="locations"
+                        onLeftIconButtonClick={this.handleToggle}/>
                     
                         <div>
                             <br />

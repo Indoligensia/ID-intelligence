@@ -51,8 +51,7 @@ class LocationList extends Component {
                 <input role="search" aria-labelledby="filter" id="search-field" type="text" placeholder="Filter"
                        value={this.state.query} onChange={this.filterLocations}/>
                 
-                    {this.state.suggestions && locationlist}
-                
+                {this.state.suggestions && locationlist}                
             </div>
         );
     }

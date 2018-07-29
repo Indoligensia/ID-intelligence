@@ -66,14 +66,6 @@ class App extends Component {
 
     handleToggle = () => this.setState({open: !this.state.open});
 
-    showBar = () => {
-        this.setState({show: 'bar', open: false });
-    };
-
-    showFoo = () => {
-        this.setState({show: 'foo', open: false });
-    };
-
     componentDidMount() {
         window.initMap = this.initMap;
         loadMapJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyBXCJFXLQPUD5i3eglS9sfdzCTkadtx4Cs&callback=initMap')
@@ -112,7 +104,7 @@ class App extends Component {
 
         var datlocations = [];
         this.state.datlocations.forEach(function (location) {
-            var longname = location.name + ' - ' + location.type;
+            var longname = location.name;
             var marker = new window.google.maps.Marker({
                 position: new window.google.maps.LatLng(location.latitude, location.longitude),
                 animation: window.google.maps.Animation.DROP,
@@ -161,12 +153,10 @@ class App extends Component {
 
                     response.json().then(function (data) {
                         var location_data = data.response.venues[0];
-                        var verified = '<b>Verified Location: </b>' + (location_data.verified ? 'Yes' : 'No') + '<br>';
-                        var checkinsCount = '<b>Number of CheckIn: </b>' + location_data.stats.checkinsCount + '<br>';
-                        var usersCount = '<b>Number of Users: </b>' + location_data.stats.usersCount + '<br>';
-                        var tipCount = '<b>Number of Tips: </b>' + location_data.stats.tipCount + '<br>';
+                        var name = '<b>' + location_data.name + '</b><br>';
+                        var address = '<i>address: ' + location_data.location.address + '</i><br>';
                         var readMore = '<a href="https://foursquare.com/v/'+ location_data.id +'" target="_blank">Read More on Foursquare Website</a>'
-                        self.state.infowindow.setContent(checkinsCount + usersCount + tipCount + verified + readMore);
+                        self.state.infowindow.setContent(name + address + readMore);
                     });
                 }
             )
@@ -190,25 +180,27 @@ class App extends Component {
             <MuiThemeProvider>
                 <div>
                 <AppBar
-                    iconClassNameRight="muidocs-icon-navigation-expand-more"
                     title="ID-intelligence: Yogyakarta"
+                    iconClassNameRight="muidocs-icon-navigation-expand-more"
                     onLeftIconButtonClick={this.handleToggle}
                 />
                     <Drawer
-                    docked={false}
-                    width={300}
-                    open={this.state.open}
-                    onRequestChange={(open) => this.setState({open})}>
+                        docked={false}
+                        width={300}
+                        open={this.state.open}
+                        onRequestChange={(open) => this.setState({open})}>
 
-                    <AppBar title="Filter"/>
+                        <AppBar title="locations"/>
                     
-                    <div>
-                    <br />
-                   <LocationList key="100" datlocations={this.state.datlocations} openInfoWindow={this.openInfoWindow}
-closeInfoWindow={this.closeInfoWindow}/>
-                    </div>
-                    </Drawer>
-                    
+                        <div>
+                            <br />
+                            <LocationList 
+                                key="100" 
+                                datlocations={this.state.datlocations} 
+                                openInfoWindow={this.openInfoWindow}
+                                closeInfoWindow={this.closeInfoWindow}/>
+                        </div>
+                    </Drawer>                    
                     <div id="map"></div>
                 </div>
             </MuiThemeProvider>

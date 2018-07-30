@@ -7,8 +7,10 @@ This is a single page application featuring a map of a neighborhood in Yogyakart
 
 Download project files [here](https://github.com/Indolligence/ID-intelligence/archive/master.zip).
 
-* install all project dependencies with `npm install` or `yarn install`
-* start the development server with `npm start` or `yarn start`
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
+
+This project uses the [Create-React-App](https://github.com/facebookincubator/create-react-app) starter code and, therefore, the service worker only works in the production build, not in the development mode. To create a production build, use `npm run build`.
 
 ## Tools/APIs Used
 

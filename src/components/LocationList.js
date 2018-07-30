@@ -51,13 +51,14 @@ class LocationList extends Component {
         }, this);
 
         return (
-            <div>
+            <div aria-labelledby="location_list">
                 <TextField
                     name="value"
                     value={this.state.query}
                     onChange={this.filterLocations}
                     floatingLabelText="filter"
                     fullWidth={true}
+                    aria-labelledby="location_filter"
                 />
                 
                 {this.state.suggestions && locationlist}                

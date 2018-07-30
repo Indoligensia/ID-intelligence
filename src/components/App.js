@@ -181,7 +181,8 @@ class App extends Component {
                         docked={false}
                         width={300}
                         open={this.state.open}
-                        onRequestChange={(open) => this.setState({open})}>
+                        onRequestChange={(open) => this.setState({open})}
+                        aria-labelledby="menu">
 
                         <AppBar title="locations"
                         onLeftIconButtonClick={this.handleToggle}/>

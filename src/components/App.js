@@ -58,7 +58,7 @@ class App extends Component {
     }
 
     handleToggle = () => this.setState({open: !this.state.open});
-
+    
     componentDidMount() {
         window.initMap = this.initMap;
         loadMapJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyBXCJFXLQPUD5i3eglS9sfdzCTkadtx4Cs&callback=initMap')
@@ -210,8 +210,5 @@ function loadMapJS(src) {
     var script = window.document.createElement("script");
     script.src = src;
     script.async = true;
-    script.onerror = function () {
-        document.write("Google Maps can't be loaded");
-    };
     ref.parentNode.insertBefore(script, ref);
 }

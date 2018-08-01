@@ -173,7 +173,7 @@ class App extends Component {
             <MuiThemeProvider>
                 <div>
                 <AppBar
-                    title="ID-intelligence: Yogyakarta"
+                    title="ID-dashboard: Yogyakarta"
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     onLeftIconButtonClick={this.handleToggle}
                 />
